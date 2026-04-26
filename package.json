@@ -1,0 +1,15 @@
+{
+  "name": "tmdb-api",
+  "version": "1.0.0",
+  "description": "Api for TheMovieDatabase.org",
+  "license": "ISC",
+  "author": "Leonardo Scarfò",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --env-file=.env ./test/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

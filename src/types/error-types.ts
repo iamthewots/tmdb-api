@@ -1,0 +1,6 @@
+export type TmdbErrorMessage =
+  | "INVALID_SEARCH_PARAMS"
+  | "INVALID_MOVIE_ID"
+  | "API_DOWN"
+  | "API_ACCESS_SUSPENDED"
+  | "INTERNAL_SERVER_ERROR";
