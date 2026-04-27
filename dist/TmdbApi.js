@@ -80,6 +80,7 @@ export class TmdbApi {
             ...params,
         };
         const finalUrl = `${url}?${new URLSearchParams(finalParams)}`;
+        console.log(finalUrl);
         try {
             const response = await fetch(finalUrl, {
                 method: "GET",

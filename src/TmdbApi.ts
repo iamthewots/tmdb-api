@@ -69,7 +69,10 @@ export class TmdbApi {
     >(
       movieId: number,
       append: A,
-      params: TmdbQueryParams<{ append_to_response?: string }> = {},
+      params: TmdbQueryParams<{
+        append_to_response?: string;
+        include_image_language?: string[];
+      }> = {},
     ) => {
       const url = `${this.baseUrl}/movie/${movieId}`;
 
@@ -84,7 +87,10 @@ export class TmdbApi {
       return response;
     },
 
-    fetchImages: async (movieId: number, params?: TmdbQueryParams) => {
+    fetchImages: async (
+      movieId: number,
+      params?: TmdbQueryParams<{ include_image_language?: string[] }>,
+    ) => {
       const url = `${this.baseUrl}/movie/${movieId}/images`;
       const response = await this.fetchTmdb<TmdbMovieImages>(url, params);
 
@@ -159,6 +165,7 @@ export class TmdbApi {
       ...params,
     };
     const finalUrl = `${url}?${new URLSearchParams(finalParams)}`;
+    console.log(finalUrl);
 
     try {
       const response = await fetch(finalUrl, {

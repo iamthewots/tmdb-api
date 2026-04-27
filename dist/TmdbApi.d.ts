@@ -21,8 +21,11 @@ export declare class TmdbApi {
         fetchCredits: (movieId: number, params?: TmdbQueryParams) => Promise<TmdbResponse<TmdbMovieCredits>>;
         fetchMovieDetails: <A extends readonly (keyof TmdbMovieDetailsAppendMap)[]>(movieId: number, append: A, params?: TmdbQueryParams<{
             append_to_response?: string;
+            include_image_language?: string[];
         }>) => Promise<TmdbResponse<AppendToTmdbMovieDetails<TmdbMovieDetails, A>>>;
-        fetchImages: (movieId: number, params?: TmdbQueryParams) => Promise<TmdbResponse<TmdbMovieImages>>;
+        fetchImages: (movieId: number, params?: TmdbQueryParams<{
+            include_image_language?: string[];
+        }>) => Promise<TmdbResponse<TmdbMovieImages>>;
         fetchMovieRecommendations: (movieId: number, params: TmdbQueryParams<{
             page: number;
         }>) => Promise<TmdbResponse<TmdbMovieSearch>>;
