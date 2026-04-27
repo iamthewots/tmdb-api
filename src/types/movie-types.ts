@@ -114,9 +114,9 @@ export type TmdbMovieImages = {
   backdrops: {
     aspect_ratio: number;
     height: number;
-    iso_3166_1: string | null;
-    iso_639_1: string | null;
-    file_path: string | null;
+    iso_3166_1: string;
+    iso_639_1: string;
+    file_path: string;
     vote_average: number;
     vote_count: number;
     width: number;
@@ -125,9 +125,9 @@ export type TmdbMovieImages = {
   logos: {
     aspect_ratio: number;
     height: number;
-    iso_3166_1: string | null;
-    iso_639_1: string | null;
-    file_path: string | null;
+    iso_3166_1: string;
+    iso_639_1: string;
+    file_path: string;
     vote_average: number;
     vote_count: number;
     width: number;
@@ -135,9 +135,9 @@ export type TmdbMovieImages = {
   posters: {
     aspect_ratio: number;
     height: number;
-    iso_3166_1: string | null;
-    iso_639_1: string | null;
-    file_path: string | null;
+    iso_3166_1: string;
+    iso_639_1: string;
+    file_path: string;
     vote_average: number;
     vote_count: number;
     width: number;
