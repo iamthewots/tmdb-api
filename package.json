@@ -5,7 +5,8 @@
   "license": "ISC",
   "author": "Leonardo Scarfò",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "node --env-file=.env ./test/main.js"
   },
