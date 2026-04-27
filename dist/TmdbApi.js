@@ -80,7 +80,6 @@ export class TmdbApi {
             ...params,
         };
         const finalUrl = `${url}?${new URLSearchParams(finalParams)}`;
-        console.log(finalUrl);
         try {
             const response = await fetch(finalUrl, {
                 method: "GET",
@@ -93,16 +92,16 @@ export class TmdbApi {
             if (response.status !== 200) {
                 switch (json.status_code) {
                     case 5:
-                        throw new TmdbError("INVALID_SEARCH_PARAMS", 422, 5);
+                        throw new TmdbError("INVALID_SEARCH_PARAMS", 422, 5, finalUrl);
                     case 6:
-                        throw new TmdbError("INVALID_MOVIE_ID", 400, 6);
+                        throw new TmdbError("INVALID_MOVIE_ID", 400, 6, finalUrl);
                     case 9:
-                        throw new TmdbError("API_DOWN", 503, 9);
+                        throw new TmdbError("API_DOWN", 503, 9, finalUrl);
                     case 10:
-                        throw new TmdbError("API_ACCESS_SUSPENDED", 503, 10);
+                        throw new TmdbError("API_ACCESS_SUSPENDED", 503, 10, finalUrl);
                     case 11:
                     default:
-                        throw new TmdbError("INTERNAL_SERVER_ERROR", 500, 11);
+                        throw new TmdbError("INTERNAL_SERVER_ERROR", 500, 11, finalUrl);
                 }
             }
             return { success: true, json: json };

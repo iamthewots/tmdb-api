@@ -5,6 +5,7 @@ export class TmdbError {
     public message: TmdbErrorMessage,
     public statusCode: number,
     public tmdbCode: number,
+    public url?: string,
   ) {}
 
   static from(error: any) {
