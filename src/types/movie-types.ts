@@ -110,13 +110,6 @@ export type TmdbMovieCredits = {
   }[];
 };
 
-export type TmdbMovieGenresList = {
-  genres: {
-    id: number;
-    name: string;
-  }[];
-};
-
 export type TmdbMovieImages = {
   backdrops: {
     aspect_ratio: number;

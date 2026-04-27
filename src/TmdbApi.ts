@@ -1,6 +1,7 @@
 import { TmdbError } from "./TmdbError.js";
 import type { TmdbQueryParams, TmdbResponse } from "./types/api-types.js";
 import type { TmdbCountriesConfiguration } from "./types/configuration-types.js";
+import type { TmdbMovieGenresList } from "./types/genres-types.js";
 import {
   type TmdbMovieCredits,
   type TmdbMovieImages,
@@ -9,7 +10,6 @@ import {
   type TmdbMovieDetailsAppendMap,
   type TmdbMovieAlternativeTitles,
   type TmdbMovieTranslations,
-  type TmdbMovieGenresList,
   type TmdbMovieWatchProviders,
 } from "./types/movie-types.js";
 import type { TmdbMovieSearch } from "./types/search-types.js";
@@ -133,7 +133,16 @@ export class TmdbApi {
   };
 
   search = {
-    movie: async (params: TmdbQueryParams<{ query: string; page: number }>) => {
+    movie: async (
+      params: TmdbQueryParams<{
+        query: string;
+        page: number;
+        include_adult?: boolean;
+        primary_release_year?: boolean;
+        region?: string;
+        year?: string;
+      }>,
+    ) => {
       const url = `${this.baseUrl}/search/movie`;
       const response = await this.fetchTmdb<TmdbMovieSearch>(url, params);
 

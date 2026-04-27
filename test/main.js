@@ -2,7 +2,7 @@ import fs from "fs";
 import { TmdbApi } from "../dist/index.js";
 
 const client = new TmdbApi(process.env.API_KEY, "it-IT");
-client.search.movie({ query: "Species", page: 1 }).then((response) => {
+client.genres.fetchMoviesList().then((response) => {
   if (response.success) {
     fs.writeFileSync(
       "./test/output.json",
