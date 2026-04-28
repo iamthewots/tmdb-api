@@ -23,6 +23,13 @@ export class TmdbApi {
     private _language?: string,
   ) {}
 
+  async testApiKey() {
+    const url = `${this.baseUrl}/authenticatio`;
+    const response = await this.fetchTmdb(url);
+
+    return response.success;
+  }
+
   configuration = {
     fetchCountries: async (params: TmdbQueryParams) => {
       const url = `${this.baseUrl}/configuration/countries`;
