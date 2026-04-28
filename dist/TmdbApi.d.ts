@@ -8,6 +8,7 @@ export declare class TmdbApi {
     private _language?;
     baseUrl: string;
     constructor(_apiKey: string, _language?: string | undefined);
+    testApiKey(): Promise<boolean>;
     configuration: {
         fetchCountries: (params: TmdbQueryParams) => Promise<TmdbResponse<TmdbCountriesConfiguration>>;
     };

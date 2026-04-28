@@ -8,6 +8,11 @@ export class TmdbApi {
         this._apiKey = _apiKey;
         this._language = _language;
     }
+    async testApiKey() {
+        const url = `${this.baseUrl}/authenticatio`;
+        const response = await this.fetchTmdb(url);
+        return response.success;
+    }
     configuration = {
         fetchCountries: async (params) => {
             const url = `${this.baseUrl}/configuration/countries`;
