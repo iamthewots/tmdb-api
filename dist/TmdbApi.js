@@ -9,7 +9,7 @@ export class TmdbApi {
         this._language = _language;
     }
     async testApiKey() {
-        const url = `${this.baseUrl}/authenticatio`;
+        const url = `${this.baseUrl}/authentication`;
         const response = await this.fetchTmdb(url);
         return response.success;
     }
