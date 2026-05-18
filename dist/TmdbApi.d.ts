@@ -1,4 +1,5 @@
 import type { TmdbQueryParams, TmdbResponse } from "./types/api-types.js";
+import type { TmdbCollection } from "./types/collection-types.js";
 import type { TmdbCountriesConfiguration } from "./types/configuration-types.js";
 import type { TmdbMovieGenresList } from "./types/genres-types.js";
 import { type TmdbMovieCredits, type TmdbMovieImages, type AppendToTmdbMovieDetails, type TmdbMovieDetails, type TmdbMovieDetailsAppendMap, type TmdbMovieAlternativeTitles, type TmdbMovieTranslations, type TmdbMovieWatchProviders } from "./types/movie-types.js";
@@ -9,6 +10,11 @@ export declare class TmdbApi {
     baseUrl: string;
     constructor(_apiKey: string, _language?: string | undefined);
     testApiKey(): Promise<boolean>;
+    collection: {
+        fetchDetails: (collectionId: number, params: TmdbQueryParams<{
+            page: number;
+        }>) => Promise<TmdbResponse<TmdbCollection>>;
+    };
     configuration: {
         fetchCountries: (params: TmdbQueryParams) => Promise<TmdbResponse<TmdbCountriesConfiguration>>;
     };

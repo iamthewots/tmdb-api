@@ -13,6 +13,13 @@ export class TmdbApi {
         const response = await this.fetchTmdb(url);
         return response.success;
     }
+    collection = {
+        fetchDetails: async (collectionId, params) => {
+            const url = `${this.baseUrl}/collection/${collectionId}`;
+            const response = await this.fetchTmdb(url, params);
+            return response;
+        }
+    };
     configuration = {
         fetchCountries: async (params) => {
             const url = `${this.baseUrl}/configuration/countries`;

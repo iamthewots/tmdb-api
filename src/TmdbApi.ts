@@ -1,5 +1,6 @@
 import { TmdbError } from "./TmdbError.js";
 import type { TmdbQueryParams, TmdbResponse } from "./types/api-types.js";
+import type { TmdbCollection } from "./types/collection-types.js";
 import type { TmdbCountriesConfiguration } from "./types/configuration-types.js";
 import type { TmdbErrorMessage } from "./types/error-types.js";
 import type { TmdbMovieGenresList } from "./types/genres-types.js";
@@ -28,6 +29,18 @@ export class TmdbApi {
     const response = await this.fetchTmdb(url);
 
     return response.success;
+  }
+
+  collection = {
+    fetchDetails: async (collectionId: number, params: TmdbQueryParams<{ page: number}>) => {
+      const url = `${this.baseUrl}/collection/${collectionId}`;
+      const response = await this.fetchTmdb<TmdbCollection>(
+        url,
+        params,
+      );
+
+      return response;
+    }
   }
 
   configuration = {
