@@ -32,7 +32,7 @@ export class TmdbApi {
   }
 
   collection = {
-    fetchDetails: async (collectionId: number, params: TmdbQueryParams<{ page: number}>) => {
+    fetchDetails: async (collectionId: number, params: TmdbQueryParams) => {
       const url = `${this.baseUrl}/collection/${collectionId}`;
       const response = await this.fetchTmdb<TmdbCollection>(
         url,

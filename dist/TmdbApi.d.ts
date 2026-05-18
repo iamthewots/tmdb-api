@@ -11,9 +11,7 @@ export declare class TmdbApi {
     constructor(_apiKey: string, _language?: string | undefined);
     testApiKey(): Promise<boolean>;
     collection: {
-        fetchDetails: (collectionId: number, params: TmdbQueryParams<{
-            page: number;
-        }>) => Promise<TmdbResponse<TmdbCollection>>;
+        fetchDetails: (collectionId: number, params: TmdbQueryParams) => Promise<TmdbResponse<TmdbCollection>>;
     };
     configuration: {
         fetchCountries: (params: TmdbQueryParams) => Promise<TmdbResponse<TmdbCountriesConfiguration>>;
