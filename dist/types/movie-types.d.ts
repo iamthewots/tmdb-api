@@ -160,7 +160,7 @@ export type TmdbMovieWatchProviders = {
     results: {
         [key: string]: {
             link: string;
-        } & Record<TmdbWatchProviderOption, TmdbWatchProviderDetails>;
+        } & Record<TmdbWatchProviderOption, TmdbWatchProviderDetails[]>;
     };
 };
 export type TmdbWatchProviderOption = "buy" | "flatrate" | "rent";
