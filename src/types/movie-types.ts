@@ -166,7 +166,7 @@ export type TmdbMovieWatchProviders = {
   results: {
     [key: string]: {
       link: string;
-    } & Record<TmdbWatchProviderOption, TmdbWatchProviderDetails>;
+    } & Record<TmdbWatchProviderOption, TmdbWatchProviderDetails[]>;
   };
 };
 
