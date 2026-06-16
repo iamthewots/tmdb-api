@@ -149,7 +149,7 @@ export class TmdbApi {
     },
 
     fetchWatchProviders: async (movieId: number, params?: TmdbQueryParams) => {
-      const url = `${this.baseUrl}/movie/${movieId}/providers`;
+      const url = `${this.baseUrl}/movie/${movieId}/watch/providers`;
       const response = await this.fetchTmdb<TmdbMovieWatchProviders>(
         url,
         params,

@@ -74,7 +74,7 @@ export class TmdbApi {
             return response;
         },
         fetchWatchProviders: async (movieId, params) => {
-            const url = `${this.baseUrl}/movie/${movieId}/providers`;
+            const url = `${this.baseUrl}/movie/${movieId}/watch/providers`;
             const response = await this.fetchTmdb(url, params);
             return response;
         },
